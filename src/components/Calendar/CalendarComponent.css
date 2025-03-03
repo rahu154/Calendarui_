@@ -95,13 +95,16 @@
 
 /* Events Sidebar */
 .events-sidebar {
-    width: 25%;
+    width: 400px;
     background-color: white;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1; /* Ensure the sidebar is above other elements */
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 10; /* Ensure the sidebar is above other elements */
 }
 
 .sidebar-event {
