@@ -271,13 +271,13 @@ const CalendarComponent = () => {
         </div>
       )}
 
-      <div className="calendar-wrapper" style={{ height: "calc(100% - 60px)" }}>
+      <div className="calendar-wrapper" style={{ width: "100%", height: "100%" }}>
         <Calendar
           localizer={localizer}
           events={events}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: "100%", width: "75%" }}
+          style={{ height: "100%", width: "100%" }}
           onSelectEvent={handleEventClick}
           view={view}
           onView={setView}
@@ -292,6 +292,7 @@ const CalendarComponent = () => {
         {expandedDate && groupedEvents[expandedDate]?.length > 1 && (
           <div className="events-sidebar">
             <h3>Events on {format(new Date(expandedDate), "dd MMM yyyy")}</h3>
+            <button onclick={() => setExpandedDate(null)}>Close</button>
             {groupedEvents[expandedDate].map((event, index) => (
               <div key={event.id} className="sidebar-event">
                 <button
